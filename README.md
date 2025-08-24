@@ -1,5 +1,4 @@
-# quote_project
-"My First Project : Simple Quote Fetcher built in Python – demonstrates API calls, error handling, and fallback quotes." 
+# QUOTE_PROJECT  
 
 # 📌 Project 1 : Quote Fetcher  
 This is my **first Python project** where I tried to build something simple but useful.  
