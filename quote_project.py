@@ -89,3 +89,4 @@ except (KeyError, requests.exceptions.RequestException):
     backup = random.choice(fallback_quotes)
     show_quote(backup["content"], backup["author"], "Fallback Quote")
 
+
