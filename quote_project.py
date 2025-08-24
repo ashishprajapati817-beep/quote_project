@@ -1,17 +1,13 @@
-'''  ✅ Polished Beginner Version (Quote Fetcher)  ''' 
+                        '''  ✅ Beginner Version (Quote Fetcher)  ''' 
 
-#           ***********************************************
-#                     PROJECT 1 : QUOTE FETCHER
-#           ***********************************************
+# =========== PROJECT 1 : QUOTE FETCHER ===========
 
 import requests
 import random
 
 print("✅ Project 1 Started : Quote Fetcher !!")
 
-#  ======================================
-#     Step 1 : Define Fallback Quotes
-#  ====================================== 
+# Defining Fallback Quotes :  
 
 fallback_quotes = [
 
@@ -21,19 +17,15 @@ fallback_quotes = [
 
 ]
 
-#    ========================================
-#       Step 2 : Function to Display Quote
-#    ======================================== 
+# Function to Display Quote :
 
 def show_quote(content, author, source = "API") :
     print(f"\n  Source: {source}")
     print(" 💬 " , content)
     print("✍️ - " , author) 
+    
 
-
-#    =================================
-#        Step 3 : Normal API Call
-#    ================================= 
+# Normal API Call :
 
 try:
     response = requests.get("https://api.quotable.io/random")
@@ -48,9 +40,7 @@ except requests.exceptions.RequestException as e :
     show_quote(backup["content"], backup["author"], "Fallback Quote") 
 
 
-#    =============================
-#       Step 4 : Wrong URL Test
-#    ============================= 
+# Wrong URL Test :  
 
 try:
     response = requests.get("https://api.quotable.iiio/random")         # Wrong URL
@@ -65,9 +55,7 @@ except requests.exceptions.RequestException:
     show_quote(backup["content"], backup["author"], "Fallback Quote") 
 
 
-#    ==============================
-#       Step 5 : Wrong Key Test
-#    ============================== 
+# Wrong Key Test :
 
 try:
     response = requests.get("https://api.quotable.io/random")
@@ -84,9 +72,7 @@ except (KeyError, requests.exceptions.RequestException):
     show_quote(backup["content"], backup["author"], "Fallback Quote") 
 
 
-#    =================================
-#       Step 6 : Different Endpoint
-#    ================================= 
+# Different Endpoint :
 
 try:
     response = requests.get("https://api.quotable.io/quotes")  # Different endpoint
@@ -102,3 +88,4 @@ except (KeyError, requests.exceptions.RequestException):
     print("\n ⚠️ API unavailable / Different structure")
     backup = random.choice(fallback_quotes)
     show_quote(backup["content"], backup["author"], "Fallback Quote")
+
